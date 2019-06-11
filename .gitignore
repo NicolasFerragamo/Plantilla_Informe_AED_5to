@@ -148,6 +148,7 @@ acs-*.bib
 # minted
 _minted*
 *.pyg
+*.pyg.lst
 
 # morewrites
 *.mw
@@ -240,3 +241,9 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+#carpetas esxtras
+Plantilla/plantilla.pdf
+Plantilla/plantilla.pyg.lst
+Plantilla/plantilla.pyg.sty
+
