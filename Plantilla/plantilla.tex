@@ -1,0 +1,229 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+%\DeclareGraphicsExtensions{.BMP,.png,.pdf,.jpg}
+\usepackage{subfigure} % subfiguras
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref} 
+\usepackage{wrapfig}% permite incluir gráficos o texto en un recuadro al lado del documento,LATEX se encarga de acomodar el texto del documento alrededor del recuadro introducido
+\usepackage{circuitikz} %permite graficar circuitos
+\usepackage{appendix}
+\usepackage{pdfpages}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{babel} % soluciona el problema de la flecha en tikz
+%=====================================================================
+%=====================================================================
+%Lenguajes de programación
+\usepackage{color}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{verbments}
+
+\definecolor{verbmentsbgcolor}{rgb}{0.9764, 0.9764, 0.9762}
+\definecolor{verbmentscaptionbgcolor}{rgb}{0.1647, 0.4980, 1}
+
+%opciones verbments----------------------------------------------
+\fvset{frame=bottomline,framerule=0.01cm}
+\plset{language=c,texcl=true,%style=vs,
+	numbers=left,numbersep=5pt,
+	listingnamefont=\sffamily\bfseries\color{white},%
+	bgcolor=verbmentsbgcolor,captionfont=\sffamily\color{white},
+	captionbgcolor=verbmentscaptionbgcolor, listingname=\textbf{Programa}}
+%---------------------------------------------------------------
+
+\lstset{ % si quiere usar %\lstinputlisting[language=C]{main.c}
+	language		= Matlab,
+	keywordstyle	= \color{blue},
+	breaklines		= true,
+	keywordstyle	= \color{blue},%
+	identifierstyle	= \color{black},%
+	stringstyle		= \color{mylilas},
+	commentstyle	= \color{mygreen},%
+	showspaces		= false,
+	showstringspaces= false,
+	numbers			= none,%
+	numberstyle		= {\tiny \color{black}},% size of the numbers
+	numbersep		= 11pt
+}
+%=====================================================================
+
+\usepackage{pdfpages}
+%\usepackage{slashbox}%permite hacer una linea diagonal en una tabla
+\usepackage{diagbox}
+\usepackage{multirow} % para las tablas
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\setlength{\parindent}{4em} % Definir la indentación de cada párrafo
+\setlength{\parskip}{1em}	% Definir espacio entre párrafos
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% ENCABEZADO Y PIE DE PÁGINA
+\usepackage{fancyhdr}
+\usepackage{lastpage}			
+\pagestyle{fancy}
+\fancyhf{}
+
+%% ENCABEZADO DE PÁGINA
+	\lhead{Aplicaciones de Electrónica Digital 2} % agrega esto en en el encavesado de cada hoja
+	\rhead{Nombre del TP} % agrega esto en en el encavesado de cada hoja
+	\renewcommand{\headrulewidth}{3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PIE DE PÁGINA
+\fancyfoot[LE,RO]{página \thepage \ de  \pageref{LastPage}}
+\fancyfoot[LE,LO]{Nombre alumno} % Agrega su nombre en el pie de cada hoja
+
+\renewcommand{\footrulewidth}{1pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Ferragamo Nicolás}
+\title{Titulo}
+
+%====================================================
+
+\begin{document}
+
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+		\begin{center}
+			\begin{Large}
+				{\huge\textbf{Aplicaciones de Electrónica Digital 2}}	
+				Escuela de Educación Secundaria Técnica $N^{o}$1\\
+			\end{Large}
+	
+			\begin{picture}(0,0) \put(-50,-100){
+			\includegraphics[scale=0.5]{logo.png}}
+			\end{picture}
+		\end{center} 
+	
+	\vspace{3cm}
+	
+	\begin{Huge} 
+		\begin{center}
+			\textbf{Nombre del TP\\} %complete con el título del TP
+		\end{center}
+	\end{Huge}
+	
+	\vspace{1px}
+	\begin{Large}
+		
+		Ciclo Lectivo: 2019 \\
+		
+		Curso: $5^{to}$ $2^{da}$ $G"A"$ \\ 
+		
+		Alumno: Nombre del alumno \\
+		
+		Profesor: Ferragamo Nicolás Exequiel \\
+		
+		
+	\end{Large}
+
+	 \href{mailto:su_mail}{su-mail} %crea un vinculo directo para mandar el mail
+\end{titlepage}
+
+\newpage
+\selectlanguage{spanish} % selecciona lenguaje en español porque agregue el paquete en ingles también
+
+\tableofcontents{} %índice de secciones
+
+\listoffigures % índice de figuras
+
+\listoftables % índice de tablas
+
+\newpage
+\addcontentsline{toc}{section}{Ejercicio 1}
+\section*{Ejercicio 1} 
+Puertos de entrada y salida, estructuras control de flujo, variables auxiliares
+
+\addcontentsline{toc}{subsection}{Ítem a}
+\subsection*{Ítem a} Mediante un pulsador conectado en RD4 encender un LED que se apaga al presionar otropulsador conectado en RD5.
+
+%Agregue su resolución
+
+
+%agrege el diagrma de flujo
+\begin{figure} [H] %cambiar H para cambiar de posición 
+	\centering
+%	\includegraphics[height=10cm, width= 10cm]{imagenes/diagrama.png} % descomentar para usar, no olvide cambiar el nombre de su archivo y ajustar la imagen.
+\caption{Diagrama de flujo del inciso a}
+\label{fig:inciso_a}
+\end{figure}
+
+
+%\lstinputlisting[language=C]{main.c} %una forma de agregar archivos fuente
+
+%Otra forma de agregar código
+\begin{pyglist}[caption={nombre del programa.c}] 
+	 %agregue su codigo en lenguaje c
+\end{pyglist}
+	
+\addcontentsline{toc}{subsection}{Ítem b}
+\subsection*{Ítem b} Un LED se debe de encender solo si se presionan dos pulsadores al mismo tiempo. DichoLED debe de permanecer encendido hasta que se presione uno de los pulsadores restantescualquiera de ellos apaga al LED.
+
+%Agregue su resolución
+
+
+%agrege el diagrma de flujo
+\begin{figure} [H] %cambiar H para cambiar de posición 
+	\centering
+	%	\includegraphics[height=10cm, width= 10cm]{imagenes/diagrama.png} % descomentar para usar, no olvide cambiar el nombre de su archivo y ajustar la imagen.
+	\caption{Diagrama de flujo del inciso b}
+	\label{fig:inciso_b}
+\end{figure}
+
+
+%\lstinputlisting[language=C]{main.c} %una forma de agregar archivos fuente
+
+%Otra forma de agregar código
+\begin{pyglist}[caption={nombre del programa.c}] 
+	%agregue su codigo en lenguaje c
+\end{pyglist}
+
+\addcontentsline{toc}{subsection}{Ítem c}
+\subsection*{Ítem c} Utilizar dos pulsadores de manera que:
+
+\renewcommand{\labelenumi}{\Roman{enumi}.} % para que el indice ente en números romanos si no los quiere asi borre esta linea
+\begin{enumerate}
+	\item Un pulsador a elección debe de encender dos de los cuatro LEDs a elección.
+	\item  Luego otro invierte el estado de los LEDs sea cual fuere el estado.
+\end{enumerate}
+
+Nota: Para el punto 3.II deberá de guardar el estado de los pulsadores en una variable auxiliaro bandera.
+%Agregue su resolución
+
+
+%agrege el diagrma de flujo
+\begin{figure} [H] %cambiar H para cambiar de posición 
+	\centering
+	%	\includegraphics[height=10cm, width= 10cm]{imagenes/diagrama.png} % descomentar para usar, no olvide cambiar el nombre de su archivo y ajustar la imagen.
+	\caption{Diagrama de flujo del inciso c}
+	\label{fig:inciso_c}
+\end{figure}
+
+
+%\lstinputlisting[language=C]{main.c} %una forma de agregar archivos fuente
+
+%Otra forma de agregar código
+\begin{pyglist}[caption={nombre del programa.c}] 
+	%agregue su codigo en lenguaje c
+	#include <xc.h>
+	char a=0;
+\end{pyglist}
+
+
+
+\end{document}
