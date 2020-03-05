@@ -25,33 +25,27 @@
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 \usepackage{listings}
-\usepackage{minted}
-\usepackage{verbments}
 
-\definecolor{verbmentsbgcolor}{rgb}{0.9764, 0.9764, 0.9762}
-\definecolor{verbmentscaptionbgcolor}{rgb}{0.1647, 0.4980, 1}
+\addto\captionsspanish{
+	\renewcommand\lstlistingname{Script}
+	\renewcommand\lstlistlistingname{Script}
+}
 
-%opciones verbments----------------------------------------------
-\fvset{frame=bottomline,framerule=0.01cm}
-\plset{language=c,texcl=true,%style=vs,
-	numbers=left,numbersep=5pt,
-	listingnamefont=\sffamily\bfseries\color{white},%
-	bgcolor=verbmentsbgcolor,captionfont=\sffamily\color{white},
-	captionbgcolor=verbmentscaptionbgcolor, listingname=\textbf{Programa}}
-%---------------------------------------------------------------
-
-\lstset{ % si quiere usar %\lstinputlisting[language=C]{main.c}
-	language		= Matlab,
+\lstset{ 
+	language		= C,
+	captionpos		= b, % posición de pie de código, b=debajo, t=top
+	basicstyle		= \ttfamily, % estilo de letra general
+	columns			= fixed, % columnas alineadas
 	keywordstyle	= \color{blue},
-	breaklines		= true,
+	breaklines		= true, % se permiten las lineas que que exceden del ancho del documento
 	keywordstyle	= \color{blue},%
 	identifierstyle	= \color{black},%
 	stringstyle		= \color{mylilas},
 	commentstyle	= \color{mygreen},%
 	showspaces		= false,
 	showstringspaces= false,
-	numbers			= none,%
-	numberstyle		= {\tiny \color{black}},% size of the numbers
+	numbers			= left,%
+	numberstyle		= {\tiny \color{black}},% size of the numbers		
 	numbersep		= 11pt
 }
 %=====================================================================
@@ -164,13 +158,7 @@ pulsador conectado en RD5.
 \label{fig:inciso_a}
 \end{figure}
 
-
 %\lstinputlisting[language=C]{main.c} %una forma de agregar archivos fuente
-
-%Otra forma de agregar código
-\begin{pyglist}[caption={nombre del programa.c}] 
-	 %agregue su codigo en lenguaje c
-\end{pyglist}
 	
 \addcontentsline{toc}{subsection}{Ítem b}
 \subsection*{Ítem b} Un LED se debe de encender solo si se presionan dos pulsadores al mismo tiempo. Dicho
@@ -188,13 +176,7 @@ cualquiera de ellos apaga al LED.
 	\label{fig:inciso_b}
 \end{figure}
 
-
 %\lstinputlisting[language=C]{main.c} %una forma de agregar archivos fuente
-
-%Otra forma de agregar código
-\begin{pyglist}[caption={nombre del programa.c}] 
-	%agregue su codigo en lenguaje c
-\end{pyglist}
 
 \addcontentsline{toc}{subsection}{Ítem c}
 \subsection*{Ítem c} Utilizar dos pulsadores de manera que:
@@ -219,10 +201,7 @@ o bandera.
 \end{figure}
 
 
-%Otra forma de agregar código
-\begin{pyglist}[caption={nombre del programa.c}] 
-\end{pyglist}
-\lstinputlisting[language=C,frame=double]{main.c} %una forma de agregar archivos fuente
+\lstinputlisting[language=C,caption=Ej 3,label=fig:ej3]{scripts/main.c} %una forma de agregar archivos fuente
 
 
 \end{document}
